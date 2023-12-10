@@ -77,8 +77,8 @@ with lib;
         ''--set NVIM_APPNAME "${appName}"'')
       ++ (optional (externalPackages != [])
         ''--prefix PATH : "${makeBinPath externalPackages}"'')
-      ++ (optional wrapRc
-        ''--add-flags -u --add-flags "${pkgs.writeText "init.lua" customRC}"'')
+      # ++ (optional wrapRc
+      #   ''--add-flags -u --add-flags "${pkgs.writeText "init.lua" customRC}"'')
       ++ (optional withSqlite 
         ''--set LIBSQLITE_CLIB_PATH "${pkgs.sqlite.out}/lib/libsqlite3.so"'')
       ++ (optional withSqlite 
